@@ -1,0 +1,52 @@
+.header {
+    background: #eee;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    margin-left: 144px;
+    margin-right: auto;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.47;
+        color: #1a162e;
+    }
+
+    &__arrow {
+        margin-top: 3px;
+    }
+}
+
+.top-act {
+    display: flex;
+    align-items: center;
+
+    &__group {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        min-width: 50px;
+        height: 50px;
+
+        border-radius: 8px;
+        background: var(--Secondary-Color-Background, #fff);
+        box-shadow: 0 20px 60px 10px rgba(237, 237, 246, 0.2);
+    }
+}
