@@ -1094,6 +1094,7 @@ button {
 .top-bar {
   display: flex;
   align-items: center;
+  padding: 30px 0;
 }
 
 .navbar {
@@ -1121,16 +1122,41 @@ button {
 .top-act {
   display: flex;
   align-items: center;
+  column-gap: 20px;
 }
 .top-act__group {
   display: flex;
   align-items: center;
-  column-gap: 20px;
   min-width: 50px;
   height: 50px;
   border-radius: 8px;
   background: var(--Secondary-Color-Background, #fff);
   box-shadow: 0 20px 60px 10px rgba(237, 237, 246, 0.2);
+}
+.top-act__group--single .top-act__btn {
+  padding: 13px;
+}
+.top-act__btn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 13px 20px;
+}
+.top-act__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.47;
+}
+.top-act__separate {
+  width: 1px;
+  height: 30px;
+  background: #ededf6;
+}
+.top-act__avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
 }
 
 .logo {
