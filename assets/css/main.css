@@ -1137,6 +1137,11 @@ html {
   margin-left: 144px;
   margin-right: auto;
 }
+@media (max-width: 991.98px) {
+  .navbar {
+    display: none;
+  }
+}
 .navbar__list {
   column-gap: 30px;
 }
