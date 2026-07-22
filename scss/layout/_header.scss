@@ -18,6 +18,7 @@
     }
 
     @include mix.breakpoint(sm) {
+        justify-content: space-between;
         padding: 16px 0;
     }
 
@@ -64,8 +65,11 @@
 .top-act {
     @extend %flexItemCenter;
     margin-left: auto;
-
     column-gap: 20px;
+
+    @include mix.breakpoint(sm) {
+        margin-left: 0;
+    }
 
     &__group {
         @extend %flexItemCenter;
