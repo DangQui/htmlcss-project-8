@@ -12,11 +12,30 @@
 .top-bar {
     @extend %flexItemCenter;
     padding: 30px 0;
+
+    @include mix.breakpoint(lg) {
+        padding: 20px 0;
+    }
+
+    @include mix.breakpoint(sm) {
+        padding: 16px 0;
+    }
+
+    &__more {
+        display: none;
+
+        @include mix.breakpoint(lg) {
+            display: block;
+        }
+    }
 }
 
 .navbar {
     margin-left: 144px;
-    margin-right: auto;
+
+    @include mix.breakpoint(xl) {
+        margin-left: 50px;
+    }
 
     @include mix.breakpoint(lg) {
         display: none;
@@ -44,6 +63,7 @@
 
 .top-act {
     @extend %flexItemCenter;
+    margin-left: auto;
 
     column-gap: 20px;
 
@@ -56,6 +76,16 @@
         border-radius: 8px;
         background: var(--top-act-group-bg-color);
         box-shadow: 0 20px 60px 10px var(--top-act-group-shadow);
+
+        @include mix.breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__group--single {
+        @include mix.breakpoint(lg) {
+            display: none;
+        }
     }
 
     &__group--single &__btn {
