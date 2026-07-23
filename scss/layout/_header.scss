@@ -7,6 +7,10 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include mix.breakpoint(lg) {
+        box-shadow: 0 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
@@ -18,7 +22,7 @@
         padding: 20px 0;
     }
 
-    @include mix.breakpoint(sm) {
+    @include mix.breakpoint(md) {
         justify-content: space-between;
         padding: 16px 0;
     }
@@ -33,10 +37,10 @@
 }
 
 .navbar {
-    margin-left: 144px;
+    margin-left: 129px;
 
     @include mix.breakpoint(xl) {
-        margin-left: 50px;
+        margin-left: 28px;
     }
 
     @include mix.breakpoint(lg) {
@@ -48,14 +52,6 @@
     }
 
     &__item {
-        &:first-child a {
-            padding-left: 0;
-        }
-
-        &:last-child a {
-            padding-right: 0;
-        }
-
         &:hover .dropdown {
             opacity: 1;
             visibility: visible;
@@ -84,7 +80,7 @@
     margin-left: auto;
     column-gap: 20px;
 
-    @include mix.breakpoint(sm) {
+    @include mix.breakpoint(md) {
         margin-left: 0;
     }
 
