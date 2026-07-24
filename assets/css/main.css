@@ -1195,7 +1195,40 @@ html {
 }
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    position: fixed;
+    inset: 0 50% 0 0;
+    z-index: 9;
+    padding: 20px 0;
+    margin-left: 0;
+    background: #fff;
+  }
+}
+.navbar__close-btn {
+  display: flex;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    display: block;
+  }
+}
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    visibility: visible;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .navbar__item:hover .dropdown {
@@ -1205,6 +1238,11 @@ html {
   transform: scaleY(1);
   height: 100%;
 }
+@media (max-width: 991.98px) {
+  .navbar__item {
+    width: 100%;
+  }
+}
 .navbar__link {
   column-gap: 6px;
   height: 50px;
@@ -1212,6 +1250,14 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.47;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    padding: 0 20px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    justify-content: space-between;
+  }
 }
 .navbar__arrow {
   margin-top: 3px;
@@ -1312,7 +1358,7 @@ html {
   transform: translateY(-24px);
   transform: scaleY(0);
   height: 0;
-  transition: 0.25s ease;
+  transition: 0.4s ease-out;
 }
 .dropdown__inner {
   --inner-padding: 30px;
@@ -1333,11 +1379,12 @@ html {
 
 .top-menu {
   --main-column-width: 292px;
+  --max-inner-height: calc(min(584px, 100vh - 158px) - var(--inner-padding) * 2);
   position: relative;
 }
 .top-menu__main {
   width: var(--main-column-width);
-  height: calc(min(584px, 100vh - 158px) - var(--inner-padding) * 2);
+  height: var(--max-inner-height);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
 }
@@ -1416,6 +1463,16 @@ html {
   overflow-y: auto;
   transform: translateX(-50px);
   transition: 0.3s ease;
+}
+.sub-menu--not-main {
+  position: initial;
+  inset: initial;
+  grid-template-columns: repeat(4, 1fr);
+  height: var(--max-inner-height);
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
