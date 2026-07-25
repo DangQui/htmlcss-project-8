@@ -13,6 +13,17 @@
     height: 0;
     transition: 0.5s ease-out;
 
+    @include mix.breakpoint(lg) {
+        position: initial;
+        visibility: visible;
+
+        height: 100%;
+        padding-top: 0;
+        opacity: 1;
+        transform: scaleY(1);
+        transform: translateY(0);
+    }
+
     &__inner {
         --inner-padding: 30px;
 
@@ -32,6 +43,18 @@
             transform: translateX(-50%);
             filter: var(--dropdown-shadow-color);
         }
+
+        @include mix.breakpoint(lg) {
+            padding: 0 40px;
+
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 
@@ -46,6 +69,12 @@
         height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
+
+        @include mix.breakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
@@ -57,6 +86,10 @@
         margin-top: 22px;
     }
 
+    @include mix.breakpoint(lg) {
+        margin-top: 10px;
+    }
+
     &__icon {
         position: relative;
         flex-shrink: 0;
@@ -65,6 +98,10 @@
 
         @include mix.breakpoint(xl) {
             display: none;
+        }
+
+        @include mix.breakpoint(lg) {
+            display: block;
         }
     }
 
@@ -93,10 +130,18 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.5;
+
+        @include mix.breakpoint(lg) {
+            margin-bottom: 26px;
+        }
     }
 
     &__list {
         margin-top: 18px;
+
+        @include mix.breakpoint(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -104,6 +149,7 @@
             opacity: 1;
             visibility: visible;
             transform: translateX(0);
+            display: block;
         }
     }
 
@@ -136,6 +182,13 @@
     overflow-y: auto;
     transform: translateX(-50px);
     transition: 0.3s ease;
+
+    @include mix.breakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        display: none;
+    }
 
     &--not-main {
         position: initial;

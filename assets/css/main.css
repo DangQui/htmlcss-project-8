@@ -1320,6 +1320,8 @@ html {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: auto;
+    height: calc(100% - 26px);
   }
 }
 .navbar__item:hover .dropdown {
@@ -1330,9 +1332,6 @@ html {
   height: 100%;
 }
 @media (max-width: 991.98px) {
-  .navbar__item:hover .dropdown {
-    display: none;
-  }
   .navbar__item {
     width: 100%;
   }
@@ -1449,6 +1448,17 @@ html {
   height: 0;
   transition: 0.5s ease-out;
 }
+@media (max-width: 991.98px) {
+  .dropdown {
+    position: initial;
+    visibility: visible;
+    height: 100%;
+    padding-top: 0;
+    opacity: 1;
+    transform: scaleY(1);
+    transform: translateY(0);
+  }
+}
 .dropdown__inner {
   --inner-padding: 30px;
   position: relative;
@@ -1465,6 +1475,17 @@ html {
   transform: translateX(-50%);
   filter: var(--dropdown-shadow-color);
 }
+@media (max-width: 991.98px) {
+  .dropdown__inner {
+    padding: 0 40px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .dropdown__inner::before {
+    content: none;
+  }
+}
 
 .top-menu {
   --main-column-width: 292px;
@@ -1477,6 +1498,13 @@ html {
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
 }
+@media (max-width: 991.98px) {
+  .top-menu__main {
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+}
 
 .menu-column {
   display: flex;
@@ -1484,6 +1512,11 @@ html {
 }
 .menu-column + .menu-column {
   margin-top: 22px;
+}
+@media (max-width: 991.98px) {
+  .menu-column {
+    margin-top: 10px;
+  }
 }
 .menu-column__icon {
   position: relative;
@@ -1494,6 +1527,11 @@ html {
 @media (max-width: 1199.98px) {
   .menu-column__icon {
     display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .menu-column__icon {
+    display: block;
   }
 }
 .menu-column__content {
@@ -1519,13 +1557,24 @@ html {
   font-weight: 500;
   line-height: 1.5;
 }
+@media (max-width: 991.98px) {
+  .menu-column__heading {
+    margin-bottom: 26px;
+  }
+}
 .menu-column__list {
   margin-top: 18px;
+}
+@media (max-width: 991.98px) {
+  .menu-column__list {
+    margin-top: 0;
+  }
 }
 .menu-column__item--active .sub-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+  display: block;
 }
 .menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
   color: #0071dc;
@@ -1552,6 +1601,14 @@ html {
   overflow-y: auto;
   transform: translateX(-50px);
   transition: 0.3s ease;
+}
+@media (max-width: 991.98px) {
+  .sub-menu {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    display: none;
+  }
 }
 .sub-menu--not-main {
   position: initial;
