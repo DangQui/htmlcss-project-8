@@ -1455,8 +1455,7 @@ html {
     height: 100%;
     padding-top: 0;
     opacity: 1;
-    transform: scaleY(1);
-    transform: translateY(0);
+    transform: translateY(0) scaleY(1);
   }
 }
 .dropdown__inner {
@@ -1574,7 +1573,7 @@ html {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
-  display: block;
+  display: grid;
 }
 .menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
   color: #0071dc;
@@ -1619,6 +1618,12 @@ html {
   visibility: visible;
   opacity: 1;
   padding-left: 0;
+}
+@media (max-width: 991.98px) {
+  .sub-menu--not-main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
