@@ -8,7 +8,7 @@
 .header {
     background: var(--header-bg-color);
 
-    @include mix.breakpoint(lg) {
+    @include mix.screen(lg) {
         box-shadow: 0 20px 60px 10px var(--header-shadow-color);
     }
 }
@@ -19,11 +19,11 @@
     z-index: 1;
     padding: 30px 0;
 
-    @include mix.breakpoint(lg) {
+    @include mix.screen(lg) {
         padding: 20px 0;
     }
 
-    @include mix.breakpoint(md) {
+    @include mix.screen(md) {
         justify-content: space-between;
         padding: 16px 0;
     }
@@ -32,11 +32,11 @@
 .navbar {
     margin-left: 129px;
 
-    @include mix.breakpoint(xl) {
+    @include mix.screen(xl) {
         margin-left: 28px;
     }
 
-    @include mix.breakpoint(lg) {
+    @include mix.screen(lg) {
         position: fixed;
         inset: 0 50% 0 0;
         z-index: 9;
@@ -60,19 +60,19 @@
         }
     }
 
-    @include mix.breakpoint(sm) {
+    @include mix.screen(sm) {
         inset: 0 20% 0 0;
     }
 
     &__close-btn {
         display: none;
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             display: block;
             padding: 10px 40px;
         }
 
-        @include mix.breakpoint(sm) {
+        @include mix.screen(sm) {
             padding: 0px 20px 10px;
         }
     }
@@ -81,7 +81,7 @@
         visibility: hidden;
         opacity: 0;
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             position: fixed;
             inset: 0;
             z-index: 8;
@@ -95,7 +95,7 @@
     &__list {
         @extend %flexItemCenter;
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             flex-direction: column;
             align-items: flex-start;
 
@@ -104,11 +104,11 @@
             height: calc(100% - 40px);
         }
 
-        @include mix.breakpoint(md) {
+        @include mix.screen(md) {
             height: calc(100% - 140px);
         }
 
-        @include mix.breakpoint(sm) {
+        @include mix.screen(sm) {
             height: calc(100% - 124px);
         }
     }
@@ -121,7 +121,7 @@
             height: 100%;
         }
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             width: 100%;
             &:hover .dropdown {
                 opacity: 0;
@@ -149,7 +149,7 @@
         font-weight: 500;
         line-height: 1.47;
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             padding: 0 40px;
 
             font-size: 1.6rem;
@@ -157,7 +157,7 @@
             justify-content: space-between;
         }
 
-        @include mix.breakpoint(sm) {
+        @include mix.screen(sm) {
             height: 44px;
             padding: 0 20px;
         }
@@ -166,7 +166,7 @@
     &__arrow {
         margin-top: 3px;
 
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             transform: rotate(-90deg);
             transition: transform 0.25s ease;
         }
@@ -182,7 +182,7 @@
     margin-left: auto;
     column-gap: 20px;
 
-    @include mix.breakpoint(md) {
+    @include mix.screen(md) {
         margin-left: 0;
     }
 
@@ -198,7 +198,7 @@
     }
 
     &__group--single {
-        @include mix.breakpoint(lg) {
+        @include mix.screen(lg) {
             display: none;
         }
     }
@@ -240,7 +240,7 @@
     align-items: center;
     padding: 0 40px;
 
-    @include mix.breakpoint(sm) {
+    @include mix.screen(sm) {
         height: 44px;
         padding: 0 20px;
     }
