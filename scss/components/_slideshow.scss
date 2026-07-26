@@ -2,14 +2,10 @@
 
 .slideshow {
     position: relative;
-    margin: 40px 0;
+
     &__inner {
         display: flex;
         overflow: hidden;
-    }
-
-    @include mix.screen(md) {
-        margin-top: 30px 0;
     }
 
     &__item {
