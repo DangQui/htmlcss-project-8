@@ -8,11 +8,11 @@
     padding-top: 54px;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-24px);
-    transform: scaleY(0);
+    transform: translateY(-24px) scaleY(0);
     height: 0;
     // display: none;
-    transition: 0.5s ease-out;
+    transition: visibility, transform, height;
+    transition-duration: 0.5s;
 
     @include mix.breakpoint(lg) {
         position: initial;
