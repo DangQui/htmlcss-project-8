@@ -4,6 +4,7 @@
     padding: 50px 0;
     margin-top: 60px;
     background: var(--footer-bg-color);
+    font-size: 1.4rem;
 
     &__row {
         display: grid;
@@ -23,7 +24,6 @@
 
     &__desc {
         margin-top: 30px;
-        font-size: 1.5rem;
         line-height: 1.5;
 
         @include mix.screen(lg) {
@@ -33,7 +33,6 @@
 
     &__help-text {
         margin-top: 40px;
-        font-size: 1.4rem;
         line-height: 1.4;
     }
 
@@ -50,14 +49,12 @@
     &__link,
     &__text {
         padding: 8px 0;
-        font-size: 1.5rem;
         line-height: 1.4;
     }
 
     &__link {
         display: inline-block;
         padding: 8px 0;
-        font-size: 1.5rem;
 
         &:hover {
             color: #0071dc;
@@ -112,6 +109,7 @@
 
         @include mix.screen(md) {
             width: 50%;
+            font-size: 1.6rem;
         }
 
         @include mix.screen(sm) {
@@ -129,10 +127,6 @@
             flex-direction: column-reverse;
             gap: 50px;
         }
-    }
-
-    &__copyright {
-        font-size: 1.4rem;
     }
 
     &__socials {
@@ -153,6 +147,11 @@
         filter: grayscale(50%);
         transition: translate, filter;
         transition-duration: 0.25s;
+
+        @include mix.screen(sm) {
+            width: 40px;
+            height: 40px;
+        }
 
         &--facebook {
             background: #3b5998;
@@ -184,5 +183,9 @@
         width: 14px;
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7473%) hue-rotate(184deg) brightness(95%)
             contrast(102%);
+
+        @include mix.screen(sm) {
+            width: 18px;
+        }
     }
 }
