@@ -44,6 +44,8 @@
 .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
 
     height: 46px;
     padding: 0 20px;
@@ -57,7 +59,9 @@
     transition: opacity 0.25s ease;
 
     & + .btn {
-        margin-left: 20px;
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
     }
 
     &--text {
@@ -74,6 +78,11 @@
     &--outline {
         border: 1px solid #d2d1d6;
         background: transparent;
+        transition: border-color 0.25s ease;
+
+        &:hover {
+            border-color: #77dae6;
+        }
     }
 
     &--rounded {
