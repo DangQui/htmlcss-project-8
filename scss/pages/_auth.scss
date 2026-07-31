@@ -5,6 +5,11 @@
     // align-items: center;
     min-height: 100vh;
 
+    @supports (-webkit-touch-callout: none) {
+        // Hỗ trợ trình duyệt safari trên IOS bị crollbar
+        min-height: -webkit-fill-available;
+    }
+
     &__intro,
     &__content {
         flex: 1;
@@ -45,6 +50,11 @@
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.44;
+
+            @include mix.screen(md) {
+                font-size: 1.5rem;
+                line-height: 1.47;
+            }
         }
     }
 
@@ -80,7 +90,12 @@
 
         font-size: 3rem;
         font-weight: 500;
-        line-height: 146.667%;
+        line-height: 1.47;
+
+        @include mix.screen(md) {
+            font-size: 2.2rem;
+            line-height: 1.45;
+        }
     }
 
     &__desc {
@@ -91,11 +106,20 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.47;
+
+        @include mix.screen(md) {
+            font-size: 1.4rem;
+            line-height: 1.43;
+        }
     }
 
     &__form {
         margin-top: 30px;
         width: 100%;
+
+        @include mix.screen(md) {
+            margin-top: 0;
+        }
     }
 
     &__link {
@@ -103,6 +127,11 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.67;
+
+        @include mix.screen(md) {
+            font-size: 1.4rem;
+            line-height: 1.43;
+        }
     }
 
     &__btn-group {
@@ -123,5 +152,13 @@
         color: #9e9da8;
         font-size: 1.8rem;
         line-height: 1.44;
+
+        @include mix.screen(md) {
+            font-size: 1.6rem;
+        }
+
+        &-link {
+            font-size: inherit;
+        }
     }
 }
