@@ -41,6 +41,7 @@
         }
 
         &-img {
+            width: var(--width);
             max-width: 100%;
         }
 
@@ -121,12 +122,20 @@
         }
     }
 
+    &__message {
+        margin-top: 30px;
+    }
+
     &__form {
         margin-top: 30px;
         width: 100%;
 
         @include mix.screen(md) {
             margin-top: 0;
+        }
+
+        &-forgot {
+            margin-top: 10px;
         }
     }
 
