@@ -5,10 +5,16 @@
     flex-direction: column;
     min-height: 80vh;
     background: var(--product-detail-bg);
+    padding-bottom: 60px;
 }
 
 .product-container {
     margin-top: 30px;
+}
+
+.prod-info-content {
+    border-radius: 20px;
+    background: #fff;
 }
 
 .prod-preview {
@@ -17,6 +23,10 @@
     @include mix.screen(lg) {
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    @include mix.screen(md) {
+        padding: 16px;
     }
 
     &__list {
@@ -88,7 +98,7 @@
 
 .prod-info {
     padding: 60px;
-    background: #f6f6f6;
+    background: var(--product-detail-info-bg);
 
     @include mix.screen(xxl) {
         padding: 40px;
@@ -96,6 +106,12 @@
 
     @include mix.screen(lg) {
         margin-top: 30px;
+    }
+
+    @include mix.screen(md) {
+        padding: 0 16px 16px;
+        border-radius: 0 0 20px 20px;
+        margin-top: 0;
     }
 
     &__heading {
@@ -168,6 +184,10 @@
     @include mix.screen(xxl) {
         padding-left: 10px;
     }
+
+    @include mix.screen(lg) {
+        padding-left: 0;
+    }
 }
 
 .prod-prop {
@@ -175,6 +195,10 @@
     gap: 16px;
 
     margin-top: 30px;
+
+    @include mix.screen(md) {
+        margin-top: 20px;
+    }
 
     &__icon {
         align-self: flex-start;

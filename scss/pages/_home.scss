@@ -1,6 +1,8 @@
 @use "../abstracts/mixins" as mix;
 
 .home {
+    margin-bottom: 60px;
+
     &__container {
         margin-top: 40px;
 
