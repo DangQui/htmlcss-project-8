@@ -10,11 +10,15 @@
 
 .product-container {
     margin-top: 30px;
+
+    @include mix.screen(md) {
+        margin-top: 20px;
+    }
 }
 
 .prod-info-content {
     border-radius: 20px;
-    background: #fff;
+    background: var(--product-detail-info-content-bg);
 }
 
 .prod-preview {
@@ -79,14 +83,14 @@
         object-fit: contain;
         border: 1.5px solid rgba(158, 157, 168, 0.3);
         border-radius: 8px;
-        cursor: pointer;
         opacity: 0.8;
         transition: opacity, border-color;
         transition-duration: 0.25s;
 
-        &:hover {
+        &:not(&__current):hover {
             opacity: 1;
             border-color: #9e9da8;
+            cursor: pointer;
         }
 
         &__current {
@@ -98,6 +102,7 @@
 
 .prod-info {
     padding: 60px;
+    border-radius: 10px;
     background: var(--product-detail-info-bg);
 
     @include mix.screen(xxl) {
@@ -125,7 +130,7 @@
     }
 
     &__tag {
-        background: #ededf6;
+        background: var(--product-detail-tag-bg);
     }
 
     &__card {
@@ -149,8 +154,9 @@
     &__tax {
         padding: 2px 8px;
         margin-left: 10px;
+        border-radius: 4px;
 
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+        background: #67b04433;
         color: #67b044;
         font-size: 1.4rem;
         font-weight: 500;
@@ -195,10 +201,6 @@
     gap: 16px;
 
     margin-top: 30px;
-
-    @include mix.screen(md) {
-        margin-top: 20px;
-    }
 
     &__icon {
         align-self: flex-start;
