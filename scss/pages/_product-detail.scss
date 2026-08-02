@@ -256,3 +256,12 @@
         }
     }
 }
+
+.prod-content {
+    &__heading {
+        margin-bottom: 30px;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.42;
+    }
+}
