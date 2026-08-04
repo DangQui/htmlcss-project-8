@@ -1619,11 +1619,6 @@ html {
 .top-act__btn-wrap {
   position: relative;
 }
-.top-act__btn-wrap:hover .act-dropdown {
-  opacity: 1;
-  visibility: visible;
-  scale: 1;
-}
 .top-act__btn {
   column-gap: 10px;
   padding: 13px 20px;
@@ -1724,6 +1719,11 @@ html {
   border-width: 1.5px 0;
   border-color: var(--header-act-dropdown-border-color);
   border-style: solid;
+}
+.act-dropdown__separate {
+  height: 1px;
+  margin: 30px 0;
+  background-color: var(--header-act-dropdown-border-color);
 }
 .act-dropdown__row {
   display: flex;
