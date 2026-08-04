@@ -17,6 +17,7 @@ html {
     @include mix.screen(lg) {
         --header-bg-color: #fff;
         --header-shadow-color: rgba(237, 237, 246, 0.2);
+        --header-act-dropdown-border-color: #d2d1d6;
     }
 
     // Header
