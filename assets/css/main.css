@@ -3605,6 +3605,17 @@ html {
     padding: 16px;
   }
 }
+.cart-info__heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+.cart-info__sub-heading {
+  margin: 30px 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
 .cart-info__list {
   margin-top: -30px;
 }
@@ -3815,6 +3826,66 @@ html {
   margin-top: 10px;
   font-size: 1.4rem;
   line-height: 1.43;
+}
+
+.user-address__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-address__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.user-address__desc {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  line-height: 1.47;
+}
+
+.address-card {
+  display: flex;
+  margin-top: 30px;
+}
+.address-card__left {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+}
+.address-card__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.address-card__desc {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  line-height: 1.47;
+}
+.address-card__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  list-style: disc inside;
+  font-size: 1.4rem;
+  line-height: 1.43;
+}
+.address-card__list-item {
+  padding-left: 8px;
+}
+.address-card__control {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+.address-card__control-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  line-height: 1.44;
 }
 
 /*# sourceMappingURL=main.css.map */
