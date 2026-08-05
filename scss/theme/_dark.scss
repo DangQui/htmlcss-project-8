@@ -99,4 +99,9 @@ html.dark {
     --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
     --checkout-border-color: #292e39;
     --checkout-gift-shadow: rgba(23, 28, 40, 0.2);
+
+    // Dialog
+    --dialog-bg: #2f3441;
+    --dialog-shadow: brightness(0) saturate(100%) invert(20%) sepia(30%) saturate(311%) hue-rotate(184deg)
+        brightness(96%) contrast(98%);
 }
