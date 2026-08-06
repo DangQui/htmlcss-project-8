@@ -12,6 +12,15 @@ $error-color: #ed4337;
         display: flex;
         gap: 30px;
 
+        @include mix.screen(md) {
+            gap: 20px;
+        }
+
+        @include mix.screen(sm) {
+            flex-direction: column;
+            gap: 0;
+        }
+
         > * {
             flex: 1;
         }
@@ -89,7 +98,6 @@ $error-color: #ed4337;
         padding: 12px;
 
         &-input {
-            width: 100%;
             resize: none;
         }
     }
@@ -107,6 +115,8 @@ $error-color: #ed4337;
     }
 
     &__input {
+        width: 100%;
+
         &-icon {
             margin-left: 12px;
 

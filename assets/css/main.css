@@ -186,6 +186,14 @@ textarea {
   background: transparent;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+  transition: background-color 1s 999999s;
+  -webkit-text-fill-color: var(--text-color);
+}
+
 .icon {
   filter: var(--icon-color);
 }
@@ -2654,6 +2662,17 @@ html {
   display: flex;
   gap: 30px;
 }
+@media (max-width: 767.98px) {
+  .form__row {
+    gap: 20px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .form__row > * {
   flex: 1;
 }
@@ -2714,7 +2733,6 @@ html {
   padding: 12px;
 }
 .form__text-area-input {
-  width: 100%;
   resize: none;
 }
 .form__text-input {
@@ -2727,6 +2745,9 @@ html {
 }
 .form__text-input--small {
   height: 42px;
+}
+.form__input {
+  width: 100%;
 }
 .form__input-icon {
   margin-left: 12px;
@@ -3132,10 +3153,15 @@ html {
   position: relative;
   z-index: 1;
   width: min(var(--content-width, 800px), 100% - 40px);
-  padding: 30px;
+  padding: 30px 10px 30px 30px;
   border-radius: 20px;
   background: var(--modal-bg);
   box-shadow: 0px 20px 60px 10px var(--modal-shadow);
+}
+@media (max-width: 575.98px) {
+  .modal__content {
+    padding: 20px 0 20px 20px;
+  }
 }
 .modal--small .modal__content {
   --content-width: 400px;
@@ -3158,15 +3184,20 @@ html {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 30px;
+  padding-right: 20px;
   margin-top: 30px;
 }
 @media (max-width: 767.98px) {
-  .modal {
-    padding: 20px;
-  }
   .modal__bottom {
     gap: 20px;
   }
+}
+@media (max-width: 575.98px) {
+  .modal__bottom {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767.98px) {
   .modal__btn {
     flex: 1;
   }
