@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,19 +44,19 @@
                 <!-- Breadcrumbs -->
                 <div class="checkout-container">
                     <ul class="breadcrumbs checkout-page__breadcrumbs">
-                        <li class="form__option">
+                        <li>
                             <a href="./index-logined.html" class="breadcrumbs__link">
                                 Home
                                 <img src="./assets/icons/breadcrumbs-arrow-right.svg" alt="" />
                             </a>
                         </li>
-                        <li class="form__option">
+                        <li>
                             <a href="./checkout.html" class="breadcrumbs__link">
                                 Checkout
                                 <img src="./assets/icons/breadcrumbs-arrow-right.svg" alt="" />
                             </a>
                         </li>
-                        <li class="form__option">
+                        <li>
                             <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">Shipping</a>
                         </li>
                     </ul>
@@ -432,7 +432,7 @@
         </div>
 
         <!-- Modal: Add new shopping address -->
-        <div id="add-new-address" class="modal show">
+        <div id="add-new-address" class="modal hide">
             <!-- <button class="modal__close js-toggle" toggle-target="#add-new-address">&times;</button> -->
             <div class="modal__content">
                 <h2 class="modal__heading">Add new shipping address</h2>
@@ -502,17 +502,23 @@
                                     type="text"
                                     name=""
                                     id="city"
-                                    class="form__input"
+                                    class="form__input js-toggle"
+                                    toggle-target="#city-dialog"
                                     placeholder="City/District/Town" />
                                 <img
                                     src="./assets/icons/form-error.svg"
                                     alt=""
                                     class="form__input-icon form__input-icon-error" />
 
-                                <div class="form__select-dialog">
+                                <div class="form__select-dialog hide" id="city-dialog">
+                                    <button
+                                        class="form__close-dialog d-none d-sm-block js-toggle"
+                                        toggle-target="#city-dialog">
+                                        &times;
+                                    </button>
                                     <div class="form__search">
                                         <input type="text" placeholder="Search" class="form__search-input" />
-                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon" />
+                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />
                                     </div>
                                     <ul class="form__option-list">
                                         <li class="form__option form__option--current">Ha Noi</li>

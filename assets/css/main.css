@@ -1291,6 +1291,8 @@ html.dark {
   --auth-intro-text-color: #b9babe;
   --auth-heading-color: #b9babe;
   --form-placeholder-color: #b9babe;
+  --from-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+  --form-select-dialog-bg: #171c28;
   --product-detail-bg: #292e39;
   --product-detail-info-bg: #171c28;
   --product-detail-info-content-bg: transparent;
@@ -1381,6 +1383,8 @@ html {
 }
 html {
   --form-placeholder-color: #d2d1d6;
+  --from-select-dialog-shadow: rgba($color: #000000, $alpha: 0.15);
+  --form-select-dialog-bg: #fff;
   --product-detail-bg: #fff;
   --product-detail-info-bg: #f6f6f6;
   --product-detail-info-content-bg: #fff;
@@ -2878,6 +2882,7 @@ html {
   position: absolute;
   bottom: 44px;
   left: 10px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -2888,10 +2893,25 @@ html {
   transition-duration: 0.2s;
   min-width: 230px;
   max-height: 310px;
-  padding: 10px 0;
+  padding-bottom: 10px;
   border: 1px solid #d2d1d6;
   border-radius: 10px;
-  background: #fff;
+  background: var(--form-select-dialog-bg);
+  box-shadow: 0 0 5px var(--from-select-dialog-shadow);
+}
+@media (max-width: 575.98px) {
+  .form__select-dialog {
+    position: fixed;
+    max-width: initial;
+    max-height: initial;
+    inset: 0;
+    border-radius: 0;
+  }
+}
+.form__select-dialog.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
 }
 .form__input:focus ~ .form__select-dialog {
   opacity: 1;
@@ -2901,23 +2921,51 @@ html {
 .form__search {
   display: flex;
   align-items: center;
-  padding: 0 20px 10px;
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 20px;
   border-bottom: 1px solid #d2d1d6;
+}
+@media (max-width: 991.98px) {
+  .form__search {
+    height: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__search {
+    flex-direction: row-reverse;
+    margin-top: 30px;
+  }
 }
 .form__search-input {
   flex: 1;
+  height: 100%;
+  font-size: 1.6rem;
 }
 .form__search-icon {
   width: 18px;
+  margin-left: 10px;
+}
+@media (max-width: 575.98px) {
+  .form__search-icon {
+    margin-left: 0;
+    margin-right: 10px;
+  }
 }
 .form__option-list {
   flex: 1;
   margin-top: 10px;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .form__option {
   padding: 8px 20px;
   font-size: 1.4rem;
+}
+@media (max-width: 991.98px) {
+  .form__option {
+    padding: 14px 20px;
+  }
 }
 .form__option--current {
   background-color: rgba(119, 218, 230, 0.5);
@@ -2926,6 +2974,18 @@ html {
 .form__option:not(.form__option--current):hover {
   background: #77dae6;
   cursor: pointer;
+}
+.form__close-dialog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 18px;
+  font-size: 3rem;
+  opacity: 0.8;
+  transition: opacity 0.25s ease;
+}
+.form__close-dialog:hover {
+  opacity: 1;
 }
 
 .message {
@@ -2988,13 +3048,14 @@ html {
   flex: 1;
   height: 100%;
   padding-left: 15px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.43;
 }
 .search-bar__input::placeholder {
   color: #9e9da8;
   font-weight: 400;
+  font-size: 1.4rem;
 }
 .search-bar__submit {
   height: 100%;
@@ -3200,6 +3261,7 @@ html {
   padding-right: 20px;
   max-height: calc(100vh - 200px);
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .modal__content {
   position: relative;
