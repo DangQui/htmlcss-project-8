@@ -192,6 +192,7 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:hover {
   transition: background-color 1s 999999s;
   -webkit-text-fill-color: var(--text-color);
+  caret-color: var(--text-color);
 }
 
 .icon {
@@ -2706,9 +2707,6 @@ html {
   border-radius: 10px;
   border: 1.5px solid #d2d1d6;
 }
-.form__text-input--small, .form__text-area--small {
-  border-radius: 8px;
-}
 .form__text-input:focus-within, .form__text-area:focus-within {
   border-color: #77dae6;
 }
@@ -2736,6 +2734,7 @@ html {
   resize: none;
 }
 .form__text-input {
+  position: relative;
   height: 50px;
 }
 @media (max-width: 767.98px) {
@@ -2874,6 +2873,59 @@ html {
 }
 .form__tag:hover {
   color: var(--text-color);
+}
+.form__select-dialog {
+  position: absolute;
+  bottom: 44px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: center bottom;
+  transition: opacity, visibility, transform;
+  transition-duration: 0.2s;
+  min-width: 230px;
+  max-height: 310px;
+  padding: 10px 0;
+  border: 1px solid #d2d1d6;
+  border-radius: 10px;
+  background: #fff;
+}
+.form__input:focus ~ .form__select-dialog {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+.form__search {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 10px;
+  border-bottom: 1px solid #d2d1d6;
+}
+.form__search-input {
+  flex: 1;
+}
+.form__search-icon {
+  width: 18px;
+}
+.form__option-list {
+  flex: 1;
+  margin-top: 10px;
+  overflow-y: auto;
+}
+.form__option {
+  padding: 8px 20px;
+  font-size: 1.4rem;
+}
+.form__option--current {
+  background-color: rgba(119, 218, 230, 0.5);
+  font-weight: 500;
+}
+.form__option:not(.form__option--current):hover {
+  background: #77dae6;
+  cursor: pointer;
 }
 
 .message {

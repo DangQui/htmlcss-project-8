@@ -60,6 +60,8 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:hover {
     transition: background-color 1s 999999s;
     -webkit-text-fill-color: var(--text-color);
+    // Thuộc tính đổi màu con trỏ nháy
+    caret-color: var(--text-color);
 }
 
 .icon {

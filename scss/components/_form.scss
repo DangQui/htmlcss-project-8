@@ -64,10 +64,6 @@ $error-color: #ed4337;
         border-radius: 10px;
         border: 1.5px solid #d2d1d6;
 
-        &--small {
-            border-radius: 8px;
-        }
-
         // focus-within là focus vào thằng cha của nó
         &:focus-within {
             border-color: #77dae6;
@@ -103,6 +99,7 @@ $error-color: #ed4337;
     }
 
     &__text-input {
+        position: relative;
         height: 50px;
 
         @include mix.screen(md) {
@@ -267,6 +264,72 @@ $error-color: #ed4337;
 
         &:hover {
             color: var(--text-color);
+        }
+    }
+
+    &__select-dialog {
+        position: absolute;
+        bottom: 44px;
+        left: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transform-origin: center bottom;
+        transition: opacity, visibility, transform;
+        transition-duration: 0.2s;
+
+        min-width: 230px;
+        max-height: 310px;
+        padding: 10px 0;
+        border: 1px solid #d2d1d6;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    &__input:focus ~ &__select-dialog {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        padding: 0 20px 10px;
+        border-bottom: 1px solid #d2d1d6;
+
+        &-input {
+            flex: 1;
+        }
+
+        &-icon {
+            width: 18px;
+        }
+    }
+
+    &__option-list {
+        flex: 1;
+
+        margin-top: 10px;
+        overflow-y: auto;
+    }
+
+    &__option {
+        padding: 8px 20px;
+        font-size: 1.4rem;
+
+        &--current {
+            background-color: rgba($color: #77dae6, $alpha: 0.5);
+            font-weight: 500;
+        }
+
+        &:not(&--current):hover {
+            background: #77dae6;
+            cursor: pointer;
         }
     }
 }
