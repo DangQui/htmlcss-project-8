@@ -29,10 +29,22 @@
         padding: 16px;
     }
 
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &__heading {
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 1.42;
+
+        &--lv2 {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.45;
+        }
     }
 
     &__sub-heading {
@@ -108,6 +120,36 @@
 
     &__next-btn {
         margin-top: 30px;
+    }
+
+    &__edit-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.8rem;
+        line-height: 1.44;
+    }
+
+    &__checkbox {
+        position: relative;
+
+        &-input {
+            width: 20px;
+            height: 20px;
+            appearance: none;
+
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
     }
 }
 
@@ -333,9 +375,6 @@
         gap: 16px;
     }
 
-    &__info {
-    }
-
     &__title {
         font-size: 1.8rem;
         font-weight: 500;
@@ -374,33 +413,71 @@
         display: flex;
         align-items: flex-end;
         height: 100%;
+    }
+}
 
-        &-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            line-height: 1.44;
-        }
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--Background-2, #f6f6f6);
+
+    &--pointer {
+        cursor: pointer;
+    }
+
+    &__thumb {
+        width: 70px;
+        height: 54px;
+        object-fit: cover;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+    }
+
+    &__desc,
+    &__detail {
+        font-size: 1.5rem;
+        line-height: 1.47;
+    }
+
+    &__desc {
+        margin-top: 4px;
+    }
+
+    &__detail {
+        padding: 8px;
+        margin-right: -8px;
+        color: #0071dc;
+        text-decoration: underline;
     }
 
     &__checkbox {
-        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 14px;
+    }
 
-        &-input {
-            appearance: none;
+    &__checkbox-input:checked + &__cost {
+        color: inherit;
+    }
 
-            &::before {
-                content: url("../icons/checkbox-uncheck.svg");
-            }
-
-            &:not(:checked)::before {
-                filter: var(--icon-color);
-            }
-
-            &:checked::before {
-                content: url("../icons/checkbox-checked.svg");
-            }
-        }
+    &__cost {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+        color: #9e9da8;
     }
 }
