@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +71,7 @@
                 <!-- Checkout Content -->
                 <div class="checkout-container">
                     <div class="row gy-xl-3">
-                        <div class="col-8 col-xl-12">
+                        <div class="col-8 col-xl-8 col-lg-12">
                             <!-- Nếu trong một khối có nhiều thành phần nhỏ thì nên xem cả responsive phần mobile nữa -->
                             <div class="cart-info">
                                 <div class="cart-info__top">
@@ -86,7 +86,7 @@
 
                                 <!-- Payment Item 1 -->
                                 <article class="payment-item">
-                                    <div class="payment-item__content">
+                                    <div class="payment-item__info">
                                         <h3 class="payment-item__title">Imran Khan</h3>
                                         <p class="payment-item__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
                                     </div>
@@ -94,7 +94,7 @@
 
                                 <!-- Payment Item 2 -->
                                 <article class="payment-item">
-                                    <div class="payment-item__content">
+                                    <div class="payment-item__info">
                                         <h3 class="payment-item__title">Items details</h3>
                                         <p class="payment-item__desc">2 items</p>
                                     </div>
@@ -115,19 +115,21 @@
                                             alt=""
                                             class="payment-item__thumb" />
                                         <div class="payment-item__content">
-                                            <h3 class="payment-item__title">Fedex Delivery</h3>
-                                            <p class="payment-item__desc payment-item__desc--low">
-                                                Delivery: 2-3 days work
-                                            </p>
+                                            <div class="payment-item__info">
+                                                <h3 class="payment-item__title">Fedex Delivery</h3>
+                                                <p class="payment-item__desc payment-item__desc--low">
+                                                    Delivery: 2-3 days work
+                                                </p>
+                                            </div>
+                                            <span class="cart-info__checkbox payment-item__checkbox">
+                                                <input
+                                                    class="cart-info__checkbox-input payment-item__checkbox-input"
+                                                    type="radio"
+                                                    name="delivery-method"
+                                                    checked />
+                                                <span class="payment-item__cost">Free</span>
+                                            </span>
                                         </div>
-                                        <span class="cart-info__checkbox payment-item__checkbox">
-                                            <input
-                                                class="cart-info__checkbox-input payment-item__checkbox-input"
-                                                type="radio"
-                                                name="delivery-method"
-                                                checked />
-                                            <span class="payment-item__cost">Free</span>
-                                        </span>
                                     </article>
                                 </label>
 
@@ -139,23 +141,25 @@
                                             alt=""
                                             class="payment-item__thumb" />
                                         <div class="payment-item__content">
-                                            <h3 class="payment-item__title">DHL Delivery</h3>
-                                            <p class="payment-item__desc payment-item__desc--low">
-                                                Delivery: 2-3 days work
-                                            </p>
+                                            <div class="payment-item__info">
+                                                <h3 class="payment-item__title">DHL Delivery</h3>
+                                                <p class="payment-item__desc payment-item__desc--low">
+                                                    Delivery: 2-3 days work
+                                                </p>
+                                            </div>
+                                            <span class="cart-info__checkbox payment-item__checkbox">
+                                                <input
+                                                    class="cart-info__checkbox-input payment-item__checkbox-input"
+                                                    type="radio"
+                                                    name="delivery-method" />
+                                                <span class="payment-item__cost">$12.00</span>
+                                            </span>
                                         </div>
-                                        <span class="cart-info__checkbox payment-item__checkbox">
-                                            <input
-                                                class="cart-info__checkbox-input payment-item__checkbox-input"
-                                                type="radio"
-                                                name="delivery-method" />
-                                            <span class="payment-item__cost">$12.00</span>
-                                        </span>
                                     </article>
                                 </label>
                             </div>
                         </div>
-                        <div class="col-4 col-xl-12">
+                        <div class="col-4 col-xl-4 col-lg-12">
                             <div class="cart-info">
                                 <h2 class="cart-info__heading cart-infro__heading--lv2">Payment Details</h2>
                                 <p class="cart-info__desc">
@@ -221,37 +225,40 @@
                                         <p class="form__error">The email is not in the correct format!</p>
                                     </div>
                                     <div class="form__row">
-                                        <div class="form__group">
-                                            <div class="form__text-input">
-                                                <input
-                                                    type="text"
-                                                    name="card-expire"
-                                                    id="card-expire"
-                                                    class="form__input form__input--border-none"
-                                                    placeholder="MM / YY"
-                                                    required />
-                                                <img
-                                                    src="./assets/icons/form-error.svg"
-                                                    alt=""
-                                                    class="form__input-icon form__input-icon-error" />
+                                        <div class="payment-item__border-wrap">
+                                            <div class="form__group payment-item__group">
+                                                <div class="form__text-input form__input--border-none">
+                                                    <input
+                                                        type="text"
+                                                        name="card-expire"
+                                                        id="card-expire"
+                                                        class="form__input"
+                                                        placeholder="MM / YY"
+                                                        required />
+                                                    <img
+                                                        src="./assets/icons/form-error.svg"
+                                                        alt=""
+                                                        class="form__input-icon form__input-icon-error" />
+                                                </div>
+                                                <p class="form__error">The email is not in the correct format!</p>
                                             </div>
-                                            <p class="form__error">The email is not in the correct format!</p>
-                                        </div>
-                                        <div class="form__group">
-                                            <div class="form__text-input">
-                                                <input
-                                                    type="text"
-                                                    name="card-cvc"
-                                                    id="card-cvc"
-                                                    class="form__input form__input--border-none"
-                                                    placeholder="CVC"
-                                                    required />
-                                                <img
-                                                    src="./assets/icons/form-error.svg"
-                                                    alt=""
-                                                    class="form__input-icon form__input-icon-error" />
+                                            <div class="payment-item__separate"></div>
+                                            <div class="form__group payment-item__group">
+                                                <div class="form__text-input form__input--border-none">
+                                                    <input
+                                                        type="text"
+                                                        name="card-cvc"
+                                                        id="card-cvc"
+                                                        class="form__input"
+                                                        placeholder="CVC"
+                                                        required />
+                                                    <img
+                                                        src="./assets/icons/form-error.svg"
+                                                        alt=""
+                                                        class="form__input-icon form__input-icon-error" />
+                                                </div>
+                                                <p class="form__error">The email is not in the correct format!</p>
                                             </div>
-                                            <p class="form__error">The email is not in the correct format!</p>
                                         </div>
                                     </div>
                                 </form>

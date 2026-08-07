@@ -127,6 +127,10 @@ $error-color: #ed4337;
         &::placeholder {
             color: var(--form-placeholder-color);
         }
+
+        &--border-none {
+            border: none;
+        }
     }
 
     &__pull-right {
