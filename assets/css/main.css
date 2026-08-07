@@ -2412,6 +2412,10 @@ html {
 .btn--rounded {
   border-radius: 99px;
 }
+.btn--danger {
+  background: #ed4337;
+  color: #fff;
+}
 .btn[disabled], .btn--disabled {
   opacity: 0.5;
   pointer-events: none;
@@ -2933,8 +2937,10 @@ html {
 }
 @media (max-width: 575.98px) {
   .form__search {
-    flex-direction: row-reverse;
-    margin-top: 30px;
+    padding: 0 14px;
+    border: 1px solid #d2d1d6;
+    margin: 10px 20px 0;
+    border-radius: 10px;
   }
 }
 .form__search-input {
@@ -2945,12 +2951,6 @@ html {
 .form__search-icon {
   width: 18px;
   margin-left: 10px;
-}
-@media (max-width: 575.98px) {
-  .form__search-icon {
-    margin-left: 0;
-    margin-right: 10px;
-  }
 }
 .form__option-list {
   flex: 1;
@@ -2986,6 +2986,12 @@ html {
 }
 .form__close-dialog:hover {
   opacity: 1;
+}
+.form__dialog-heading {
+  padding: 14px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .message {
@@ -3297,9 +3303,9 @@ html {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   padding-right: 20px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 @media (max-width: 767.98px) {
   .modal__bottom {
@@ -3308,7 +3314,7 @@ html {
 }
 @media (max-width: 575.98px) {
   .modal__bottom {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 @media (max-width: 767.98px) {

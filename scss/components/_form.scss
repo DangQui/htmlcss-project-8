@@ -326,8 +326,10 @@ $error-color: #ed4337;
         }
 
         @include mix.screen(sm) {
-            flex-direction: row-reverse;
-            margin-top: 30px;
+            padding: 0 14px;
+            border: 1px solid #d2d1d6;
+            margin: 10px 20px 0;
+            border-radius: 10px;
         }
 
         &-input {
@@ -339,11 +341,6 @@ $error-color: #ed4337;
         &-icon {
             width: 18px;
             margin-left: 10px;
-
-            @include mix.screen(sm) {
-                margin-left: 0;
-                margin-right: 10px;
-            }
         }
     }
 
@@ -386,5 +383,12 @@ $error-color: #ed4337;
         &:hover {
             opacity: 1;
         }
+    }
+
+    &__dialog-heading {
+        padding: 14px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
     }
 }
