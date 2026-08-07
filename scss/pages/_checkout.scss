@@ -54,6 +54,13 @@
         line-height: 1.44;
     }
 
+    &__desc {
+        margin-top: 6px;
+
+        font-size: 1.5rem;
+        line-height: 1.47;
+    }
+
     &__list {
         margin-top: -30px;
 
@@ -150,6 +157,10 @@
                 content: url("../icons/checkbox-checked.svg");
             }
         }
+    }
+
+    &__form {
+        margin-bottom: 30px;
     }
 }
 
