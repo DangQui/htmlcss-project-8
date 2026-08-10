@@ -107,4 +107,16 @@ html.dark {
     --modal-bg: #2f3441;
     --modal-shadow: brightness(0) saturate(100%) invert(20%) sepia(30%) saturate(311%) hue-rotate(184deg)
         brightness(96%) contrast(98%);
+
+    // Profile
+    --profile-sidebar-bg: #171c28;
+    --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+    --profile-sidebar-link-hover: #2f3441;
+
+    // Account Info
+    --account-info-bg: #292e39;
+    --account-info-icon-bg: #171c28;
+
+    // Separate
+    --separate-color: #292e39;
 }
