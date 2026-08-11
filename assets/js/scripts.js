@@ -154,7 +154,11 @@ function initJsToggle() {
         if (!target) {
             document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
         }
+
         button.onclick = (e) => {
+            // Nếu click vào 1 link thật sự bên trong dropdown -> để nó chuyển trang bình thường
+            if (e.target.closest("a[href]")) return;
+
             e.preventDefault();
             if (!$(target)) {
                 return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
@@ -166,8 +170,11 @@ function initJsToggle() {
                 $(target).classList.toggle("show", isHidden);
             });
         };
+
         document.onclick = function (e) {
-            if (!e.target.closest(target)) {
+            // Sửa: check theo phần tử dropdown thật sự, không phải theo ảnh avatar
+            const dropdown = button.querySelector(".top-act__dropdown") || $(target);
+            if (!e.target.closest(target) && !e.target.closest(".top-act__dropdown")) {
                 const isHidden = $(target).classList.contains("hide");
                 if (!isHidden) {
                     button.click();
@@ -210,3 +217,20 @@ window.addEventListener("template-loaded", () => {
         });
     });
 });
+
+window.addEventListener("template-loaded", () => {
+    const switchBtn = document.querySelector("#switch-theme-btn");
+    if (switchBtn) {
+        switchBtn.onclick = function () {
+            const isDark = localStorage.dark === "true";
+            document.querySelector("html").classList.toggle("dark", !isDark);
+            localStorage.setItem("dark", !isDark);
+            switchBtn.querySelector("span").textContent = isDark ? "Dark mode" : "Light mode";
+        };
+        const isDark = localStorage.dark === "true";
+        switchBtn.querySelector("span").textContent = isDark ? "Light mode" : "Dark mode";
+    }
+});
+
+const isDark = localStorage.dark === "true";
+document.querySelector("html").classList.toggle("dark", isDark);

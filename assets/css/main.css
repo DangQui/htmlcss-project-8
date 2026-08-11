@@ -1692,12 +1692,32 @@ html {
   height: 30px;
   background: var(--top-act-group-separate);
 }
+.top-act__user {
+  position: relative;
+}
+.top-act__user:has(.top-act__avatar.show) .top-act__dropdown {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
+}
 .top-act__avatar {
   display: block;
   width: 50px;
   height: 50px;
   border-radius: 8px;
   cursor: pointer;
+}
+.top-act__dropdown {
+  right: -14px !important;
+  width: min(300px, 100vw) !important;
+}
+.top-act__dropdown-arrow {
+  right: 12px !important;
+}
+.top-act__override {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 }
 
 .nav-btn {
@@ -1831,6 +1851,46 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.47;
+}
+
+.user-menu__top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-menu__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.user-menu__name {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.user-menu__list {
+  margin-top: 30px;
+  margin-bottom: -14px;
+}
+.user-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0;
+  transition: text-shadow 0.25s ease;
+}
+.user-menu__link:hover {
+  text-shadow: 1px 0 0 currentColor;
+}
+.user-menu__icon {
+  width: 20px;
+  height: 20px;
+}
+.user-menu__separate {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--separate-color);
 }
 
 .footer {
