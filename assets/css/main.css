@@ -4042,7 +4042,15 @@ html {
   justify-content: space-between;
   gap: 30px;
 }
+.cart-info__back-arrow {
+  position: relative;
+  top: 4px;
+  width: 50px;
+  padding-right: 20px;
+}
 .cart-info__heading {
+  display: flex;
+  align-items: center;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.42;
@@ -4604,6 +4612,18 @@ html {
 }
 .profile__desc {
   margin-bottom: 16px;
+}
+
+.form-card__label {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 1.44;
+}
+.form-card__bottom {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=main.css.map */
