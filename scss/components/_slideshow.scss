@@ -13,7 +13,7 @@
         flex-shrink: 0;
         width: 100%;
         // Sẽ tỉ lệ với độ "rộng" của thẻ cha của nó
-        padding-top: 34%;
+        padding-top: 28%;
 
         @include mix.screen(md) {
             padding-top: 50%;
